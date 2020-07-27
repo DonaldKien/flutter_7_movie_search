@@ -3,7 +3,7 @@ import 'dart:convert';
 
 Future<Detail> fetchDetailApi(imdbId) async {
   final response = await http
-      .get('http://www.omdbapi.com/?i=$imdbId&apikey=[ENTER API KEY HERE]');
+      .get('http://www.omdbapi.com/?i=$imdbId&apikey=[ENTER API KEY]');
 
   if (response.statusCode == 200) {
     return Detail.fromJson(json.decode(response.body));

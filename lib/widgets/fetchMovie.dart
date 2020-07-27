@@ -4,7 +4,7 @@ import 'dart:convert';
 class FetchMovie {
   Future<List<Movie>> fetchMovieApi(searchTitle) async {
     final response = await http.get(
-        'http://www.omdbapi.com/?apikey=[ENTER API KEY HERE]&s=$searchTitle');
+        'http://www.omdbapi.com/?apikey=[ENTER API KEY]&s=$searchTitle');
     if (response.statusCode == 200) {
       return Movie.movieFromJson(json.decode(response.body));
     } else {
